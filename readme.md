@@ -1,13 +1,10 @@
-> **Important: This package is not actively maintained.** For bug fixes and new features, please fork.
+# Introduction
 
-BootForms
-===============
+This plugin allows you to rapidly generate forms in your Laravel applications.
 
-[![This Project Has Been Deprecated.](http://www.repostatus.org/badges/0.1.0/abandoned.svg)](http://www.repostatus.org/#abandoned)
-[![Code Climate](https://codeclimate.com/github/adamwathan/bootforms/badges/gpa.svg)](https://codeclimate.com/github/adamwathan/bootforms)
-[![Coverage Status](https://coveralls.io/repos/adamwathan/bootforms/badge.svg?branch=master)](https://coveralls.io/r/adamwathan/bootforms?branch=master)
+# Credits
 
-BootForms builds on top of my more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 3 forms. Probably not perfect for your super custom branded ready-for-release apps, but a *huge* time saver when you are still in the prototyping stage!
+This package is a fork of [bootforms](https://github.com/adamwathan/bootforms) by [Adam Wathan](https://github.com/adamwathan) which is not actively maintained.
 
 - [Installation](#installing-with-composer)
 - [Using BootForms](#using-bootforms)
@@ -24,19 +21,19 @@ BootForms builds on top of my more general [Form](https://github.com/adamwathan/
 You can install this package via Composer by running this command in your terminal in the root of your project:
 
 ```bash
-composer require adamwathan/bootforms
+composer require srmklive/bootforms
 ```
 
 ### Laravel
 
-If you are using Laravel 4 or 5, you can get started very quickly by registering the included service provider.
+If you are using Laravel 5 or greater, you can get started very quickly by registering the included service provider.
 
 Modify the `providers` array in `config/app.php` to include the `BootFormsServiceProvider`:
 
 ```php
 'providers' => [
     //...
-    'AdamWathan\BootForms\BootFormsServiceProvider'
+    Srmklive\BootForms\BootFormsServiceProvider::class
   ],
 ```
 
@@ -45,7 +42,7 @@ Add the `BootForm` facade to the `aliases` array in `config/app.php`:
 ```php
 'aliases' => [
     //...
-    'BootForm' => 'AdamWathan\BootForms\Facades\BootForm'
+    'BootForm' => Srmklive\BootForms\Facades\BootForm::class
   ],
 ```
 
@@ -54,25 +51,6 @@ You can now start using BootForms by calling methods directly on the `BootForm` 
 ```php
 BootForm::text('Email', 'email');
 ```
-
-### Outside of Laravel
-
-Usage outside of Laravel is a little trickier since there's a bit of a dependency stack you need to build up, but it's not too tricky.
-
-```php
-$formBuilder = new AdamWathan\Form\FormBuilder;
-
-$formBuilder->setOldInputProvider($myOldInputProvider);
-$formBuilder->setErrorStore($myErrorStore);
-$formBuilder->setToken($myCsrfToken);
-
-$basicBootFormsBuilder = new AdamWathan\BootForms\BasicFormBuilder($formBuilder);
-$horizontalBootFormsBuilder = new AdamWathan\BootForms\HorizontalFormBuilder($formBuilder);
-
-$bootForm = new AdamWathan\BootForms\BootForm($basicBootFormsBuilder, $horizontalBootFormsBuilder);
-```
-
-> Note: You must provide your own implementations of `AdamWathan\Form\OldInputInterface` and `AdamWathan\Form\ErrorStoreInterface` when not using the implementations meant for Laravel.
 
 ## Using BootForms
 
@@ -125,8 +103,6 @@ BootForm::open()->get()->action('/users');
 // </div>
 BootForm::text('First Name', 'first_name')->defaultValue('John Doe');
 ```
-
-For more information about what's possible, check out the documentation for [my basic Form package.](https://github.com/adamwathan/form)
 
 ### Reduced Boilerplate
 

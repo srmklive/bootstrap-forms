@@ -3,7 +3,16 @@ language: php
 php:
   - 5.6
   - 7.0
+  - 7.1
+  - 7.2
 
-install: composer install --dev
+env:
+  global:
+    - setup=stable
+    - coverage=no
 
-after_script: php vendor/bin/coveralls
+before_script:
+  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable; fi
+
+script:
+  - if [[ $coverage = 'no' ]]; then ./vendor/bin/phpunit; fi
