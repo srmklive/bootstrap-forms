@@ -27,6 +27,7 @@ class InputGroup extends Text
     public function type($type)
     {
         $this->attributes['type'] = $type;
+
         return $this;
     }
 

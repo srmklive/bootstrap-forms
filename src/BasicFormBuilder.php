@@ -5,7 +5,6 @@ namespace Srmklive\BootForms;
 use Srmklive\BootForms\Elements\CheckGroup;
 use Srmklive\BootForms\Elements\FormGroup;
 use Srmklive\BootForms\Elements\GroupWrapper;
-use Srmklive\BootForms\Elements\HelpBlock;
 use Srmklive\BootForms\Elements\InputGroup;
 use Srmklive\BootForms\Form\FormBuilder;
 
@@ -52,12 +51,12 @@ class BasicFormBuilder
         return $this->formGroup($label, $name, $control);
     }
 
-    public function button($value, $name = null, $type = "btn-default")
+    public function button($value, $name = null, $type = 'btn-default')
     {
         return $this->builder->button($value, $name)->addClass('btn')->addClass($type);
     }
 
-    public function submit($value = "Submit", $type = "btn-default")
+    public function submit($value = 'Submit', $type = 'btn-default')
     {
         return $this->builder->submit($value)->addClass('btn')->addClass($type);
     }
@@ -84,6 +83,7 @@ class BasicFormBuilder
     protected function checkGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
+
         return $this->wrap($checkGroup->addClass('checkbox'));
     }
 
@@ -97,6 +97,7 @@ class BasicFormBuilder
             $checkGroup->helpBlock($this->builder->getError($name));
             $checkGroup->addClass('has-error');
         }
+
         return $checkGroup;
     }
 
@@ -119,6 +120,7 @@ class BasicFormBuilder
     protected function radioGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
+
         return $this->wrap($checkGroup->addClass('radio'));
     }
 

@@ -13,7 +13,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function setUp()
     {
-        $this->builder = new FormBuilder;
+        $this->builder = new FormBuilder();
         $this->form = new BasicFormBuilder($this->builder);
     }
 
@@ -661,13 +661,14 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     private function getStubObject()
     {
-        $obj = new \stdClass;
+        $obj = new \stdClass();
         $obj->email = 'johndoe@example.com';
         $obj->first_name = 'John';
         $obj->last_name = 'Doe';
         $obj->date_of_birth = new \DateTime('1985-05-06');
         $obj->gender = 'male';
         $obj->terms = 'agree';
+
         return $obj;
     }
 }

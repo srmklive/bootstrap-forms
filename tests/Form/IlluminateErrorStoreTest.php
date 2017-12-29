@@ -2,10 +2,10 @@
 
 namespace Srmklive\BootForms\Test\Form;
 
+use Illuminate\Support\MessageBag;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Srmklive\BootForms\Form\ErrorStore\IlluminateErrorStore;
-use Illuminate\Support\MessageBag;
 
 class IlluminateErrorStoreTest extends TestCase
 {
