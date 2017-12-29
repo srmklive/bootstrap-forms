@@ -1,35 +1,20 @@
 <?php
 
-namespace Srmklive\BootForms;
+namespace Srmklive\BootForms\Form;
 
 use Srmklive\BootForms\Form\ErrorStore\IlluminateErrorStore;
-use Srmklive\BootForms\Form\FormBuilder;
 use Srmklive\BootForms\Form\OldInput\IlluminateOldInputProvider;
 use Illuminate\Support\ServiceProvider;
 
-class BootFormsServiceProvider extends ServiceProvider
+class FormServiceProvider extends ServiceProvider
 {
-
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
     protected $defer = false;
 
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
     public function register()
     {
         $this->registerErrorStore();
         $this->registerOldInput();
         $this->registerFormBuilder();
-        $this->registerBasicFormBuilder();
-        $this->registerHorizontalFormBuilder();
-        $this->registerBootForm();
     }
 
     protected function registerErrorStore()
@@ -58,34 +43,8 @@ class BootFormsServiceProvider extends ServiceProvider
         });
     }
 
-    protected function registerBasicFormBuilder()
-    {
-        $this->app->singleton('bootform.basic', function ($app) {
-            return new BasicFormBuilder($app['adamwathan.form']);
-        });
-    }
-
-    protected function registerHorizontalFormBuilder()
-    {
-        $this->app->singleton('bootform.horizontal', function ($app) {
-            return new HorizontalFormBuilder($app['adamwathan.form']);
-        });
-    }
-
-    protected function registerBootForm()
-    {
-        $this->app->singleton('bootform', function ($app) {
-            return new BootForm($app['bootform.basic'], $app['bootform.horizontal']);
-        });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
     public function provides()
     {
-        return ['bootform'];
+        return ['adamwathan.form'];
     }
 }

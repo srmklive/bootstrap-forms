@@ -3,7 +3,7 @@
 namespace Srmklive\BootForms\Test;
 
 use Srmklive\BootForms\Elements\FormGroup;
-use AdamWathan\Form\FormBuilder;
+use Srmklive\BootForms\Form\FormBuilder;
 
 class FormGroupTest extends \PHPUnit\Framework\TestCase
 {

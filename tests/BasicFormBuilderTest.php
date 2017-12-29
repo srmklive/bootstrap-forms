@@ -4,7 +4,7 @@ namespace Srmklive\BootForms\Test;
 
 use Mockery;
 use Srmklive\BootForms\BasicFormBuilder;
-use AdamWathan\Form\FormBuilder;
+use Srmklive\BootForms\Form\FormBuilder;
 
 class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 {
@@ -38,7 +38,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextGroupWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Email is required.');
 
@@ -51,7 +51,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextGroupWithErrorOverridesCustomHelpBlock()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Email is required.');
 
@@ -64,7 +64,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextGroupWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('example@example.com');
 
@@ -77,7 +77,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextGroupWithOldInputAndDefaultValue()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('example@example.com');
 
@@ -97,13 +97,13 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextGroupWithOldInputAndError()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('example@example.com');
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Email is required.');
 
@@ -123,7 +123,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderPasswordGroupDoesntKeepOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('password');
 
@@ -136,7 +136,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderPasswordGroupWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Password is required.');
 
@@ -201,7 +201,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderSelectWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Color is required.');
 
@@ -216,7 +216,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderSelectWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('2');
 
@@ -238,7 +238,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderCheckboxWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Must agree to terms.');
 
@@ -251,7 +251,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderCheckboxWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('1');
 
@@ -278,7 +278,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderRadioWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
@@ -290,7 +290,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderRadioWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('red');
 
@@ -324,7 +324,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextareaWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('Sample bio');
 
@@ -336,7 +336,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderTextareaWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
@@ -489,7 +489,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderFileGroupWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
@@ -598,7 +598,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderInputGroupWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('xyz');
 
@@ -611,7 +611,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderInputGroupWithOldInputAndDefaultValue()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('xyz');
 
@@ -631,13 +631,13 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testRenderInputGroupWithOldInputAndError()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('Srmklive\BootForms\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('abc');
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('Srmklive\BootForms\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Test is required.');
 

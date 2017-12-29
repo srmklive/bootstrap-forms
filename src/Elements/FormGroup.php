@@ -2,8 +2,8 @@
 
 namespace Srmklive\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Element;
-use AdamWathan\Form\Elements\Label;
+use Srmklive\BootForms\Form\Elements\Element;
+use Srmklive\BootForms\Form\Elements\Label;
 
 class FormGroup extends Element
 {

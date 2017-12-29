@@ -2,7 +2,7 @@
 
 namespace Srmklive\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Label;
+use Srmklive\BootForms\Form\Elements\Label;
 
 class CheckGroup extends FormGroup
 {

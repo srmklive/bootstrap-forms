@@ -2,7 +2,7 @@
 
 namespace Srmklive\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Text;
+use Srmklive\BootForms\Form\Elements\Text;
 
 class InputGroup extends Text
 {

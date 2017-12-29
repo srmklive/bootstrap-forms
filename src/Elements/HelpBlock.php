@@ -2,7 +2,7 @@
 
 namespace Srmklive\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Element;
+use Srmklive\BootForms\Form\Elements\Element;
 
 class HelpBlock extends Element
 {

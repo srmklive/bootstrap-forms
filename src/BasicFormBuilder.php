@@ -7,7 +7,7 @@ use Srmklive\BootForms\Elements\FormGroup;
 use Srmklive\BootForms\Elements\GroupWrapper;
 use Srmklive\BootForms\Elements\HelpBlock;
 use Srmklive\BootForms\Elements\InputGroup;
-use AdamWathan\Form\FormBuilder;
+use Srmklive\BootForms\Form\FormBuilder;
 
 class BasicFormBuilder
 {

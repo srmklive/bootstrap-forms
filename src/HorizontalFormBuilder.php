@@ -5,7 +5,7 @@ namespace Srmklive\BootForms;
 use Srmklive\BootForms\Elements\CheckGroup;
 use Srmklive\BootForms\Elements\HorizontalFormGroup;
 use Srmklive\BootForms\Elements\OffsetFormGroup;
-use AdamWathan\Form\FormBuilder;
+use Srmklive\BootForms\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder
 {
