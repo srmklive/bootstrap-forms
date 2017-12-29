@@ -17,8 +17,13 @@
         "mockery/mockery": "0.9.*"
     },
     "autoload": {
-        "psr-0": {
-            "Srmklive\\BootForms": "src/"
+        "psr-4": {
+            "Srmklive\\BootForms\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Srmklive\\BootForms\\Test\\": "tests"
         }
     },
     "minimum-stability": "stable"

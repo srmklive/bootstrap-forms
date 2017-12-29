@@ -1,5 +1,8 @@
 <?php
 
+namespace Srmklive\BootForms\Test;
+
+use Mockery;
 use Srmklive\BootForms\HorizontalFormBuilder;
 use AdamWathan\Form\FormBuilder;
 

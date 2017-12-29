@@ -1,5 +1,8 @@
 <?php
 
+namespace Srmklive\BootForms\Test;
+
+use Mockery;
 use Srmklive\BootForms\BasicFormBuilder;
 use AdamWathan\Form\FormBuilder;
 
@@ -658,7 +661,7 @@ class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     private function getStubObject()
     {
-        $obj = new stdClass;
+        $obj = new \stdClass;
         $obj->email = 'johndoe@example.com';
         $obj->first_name = 'John';
         $obj->last_name = 'Doe';

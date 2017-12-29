@@ -1,5 +1,7 @@
 <?php
 
+namespace Srmklive\BootForms\Test;
+
 use Srmklive\BootForms\Elements\InputGroup;
 
 class InputGroupTest extends \PHPUnit\Framework\TestCase

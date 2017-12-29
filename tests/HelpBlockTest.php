@@ -1,5 +1,7 @@
 <?php
 
+namespace Srmklive\BootForms\Test;
+
 use Srmklive\BootForms\Elements\HelpBlock;
 
 class HelpBlockTest extends \PHPUnit\Framework\TestCase
