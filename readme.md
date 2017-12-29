@@ -1,3 +1,6 @@
+[![StyleCI](https://styleci.io/repos/115716043/shield?branch=master)](https://styleci.io/repos/115716043)
+[![Build Status](https://travis-ci.org/srmklive/bootstrap-forms.svg?branch=master)](https://travis-ci.org/srmklive/bootstrap-forms)
+
 # Introduction
 
 This plugin allows you to rapidly generate forms in your Laravel applications.
