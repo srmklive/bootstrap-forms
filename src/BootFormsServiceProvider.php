@@ -2,14 +2,13 @@
 
 namespace Srmklive\BootForms;
 
+use Illuminate\Support\ServiceProvider;
 use Srmklive\BootForms\Form\ErrorStore\IlluminateErrorStore;
 use Srmklive\BootForms\Form\FormBuilder;
 use Srmklive\BootForms\Form\OldInput\IlluminateOldInputProvider;
-use Illuminate\Support\ServiceProvider;
 
 class BootFormsServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -49,7 +48,7 @@ class BootFormsServiceProvider extends ServiceProvider
     protected function registerFormBuilder()
     {
         $this->app->singleton('adamwathan.form', function ($app) {
-            $formBuilder = new FormBuilder;
+            $formBuilder = new FormBuilder();
             $formBuilder->setErrorStore($app['adamwathan.form.errorstore']);
             $formBuilder->setOldInputProvider($app['adamwathan.form.oldinput']);
             $formBuilder->setToken($app['session.store']->token());

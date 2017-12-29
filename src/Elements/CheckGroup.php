@@ -35,7 +35,7 @@ class CheckGroup extends FormGroup
     {
         $this->inline = true;
 
-        $class = $this->control()->getAttribute('type') . '-inline';
+        $class = $this->control()->getAttribute('type').'-inline';
         $this->label->removeClass('control-label')->addClass($class);
 
         return $this;
@@ -49,6 +49,7 @@ class CheckGroup extends FormGroup
     public function __call($method, $parameters)
     {
         call_user_func_array([$this->label->getControl(), $method], $parameters);
+
         return $this;
     }
 }

@@ -10,7 +10,7 @@ trait InputContractTest
 
     protected function elementRegExp($attributes)
     {
-        return '/\A<input type="' . $this->getTestSubjectType() . '" .*?' . $attributes . '( .*?|)>\z/';
+        return '/\A<input type="'.$this->getTestSubjectType().'" .*?'.$attributes.'( .*?|)>\z/';
     }
 
     public function testTextCanBeCreated()
@@ -23,7 +23,7 @@ trait InputContractTest
         $text = $this->newTestSubjectInstance('email');
         $result = $text->required()->render();
 
-        $message = "required attribute should be set";
+        $message = 'required attribute should be set';
         $this->assertRegExp($this->elementRegExp('required="required"'), $result, $message);
     }
 
@@ -32,7 +32,7 @@ trait InputContractTest
         $text = $this->newTestSubjectInstance('email');
         $result = $text->required(false)->render();
 
-        $message = "required attribute shouldnt be set";
+        $message = 'required attribute shouldnt be set';
         $this->assertNotRegExp($this->elementRegExp('required="required"'), $result, $message);
     }
 
@@ -41,7 +41,7 @@ trait InputContractTest
         $text = $this->newTestSubjectInstance('');
         $result = $text->autofocus()->render();
 
-        $message = "autofocus attribute should be set";
+        $message = 'autofocus attribute should be set';
         $this->assertRegExp($this->elementRegExp('autofocus="autofocus"'), $result, $message);
     }
 
@@ -52,13 +52,13 @@ trait InputContractTest
         $text = $this->newTestSubjectInstance('');
         $result = $text->unfocus()->render();
 
-        $message = "autofocus attribute should not be set";
+        $message = 'autofocus attribute should not be set';
         $this->assertNotRegExp($this->elementRegExp($pattern), $result, $message);
 
         $text = $this->newTestSubjectInstance('');
         $result = $text->autofocus()->unfocus()->render();
 
-        $message = "autofocus attribute should be removed";
+        $message = 'autofocus attribute should be removed';
         $this->assertNotRegExp($this->elementRegExp($pattern), $result, $message);
     }
 
@@ -93,7 +93,7 @@ trait InputContractTest
         $text = $this->newTestSubjectInstance('email');
         $result = $text->required(false)->render();
 
-        $message = "disabled attribute shouldnt be set";
+        $message = 'disabled attribute shouldnt be set';
         $this->assertNotRegExp($this->elementRegExp('disabled="disabled"'), $result, $message);
     }
 
@@ -111,7 +111,7 @@ trait InputContractTest
         $text = $this->newTestSubjectInstance('email');
         $result = $text->required(false)->render();
 
-        $message = "readonly attribute shouldnt be set";
+        $message = 'readonly attribute shouldnt be set';
         $this->assertNotRegExp($this->elementRegExp('readonly="readonly"'), $result, $message);
     }
 
@@ -197,7 +197,7 @@ trait InputContractTest
         $text = $text->value('example@example.com');
 
         $result = $text->render();
-        $message ='value attribute should be set';
+        $message = 'value attribute should be set';
         $this->assertRegExp($this->elementRegExp('value="example@example.com"'), $result, $message);
 
         $text = $this->newTestSubjectInstance('first_name');

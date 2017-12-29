@@ -16,7 +16,7 @@ class OffsetFormGroup
     public function render()
     {
         $html = '<div class="form-group">';
-        $html .= '<div class="' . $this->getControlClass() . '">';
+        $html .= '<div class="'.$this->getControlClass().'">';
         $html .= $this->control;
         $html .= '</div>';
 
@@ -28,6 +28,7 @@ class OffsetFormGroup
     public function setColumnSizes($columnSizes)
     {
         $this->columnSizes = $columnSizes;
+
         return $this;
     }
 
@@ -37,6 +38,7 @@ class OffsetFormGroup
         foreach ($this->columnSizes as $breakpoint => $sizes) {
             $class .= sprintf('col-%s-offset-%s col-%s-%s ', $breakpoint, $sizes[0], $breakpoint, $sizes[1]);
         }
+
         return trim($class);
     }
 
@@ -48,6 +50,7 @@ class OffsetFormGroup
     public function __call($method, $parameters)
     {
         call_user_func_array([$this->control, $method], $parameters);
+
         return $this;
     }
 }

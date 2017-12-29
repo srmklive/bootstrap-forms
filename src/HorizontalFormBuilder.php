@@ -22,6 +22,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
     public function setColumnSizes($columnSizes)
     {
         $this->columnSizes = $columnSizes;
+
         return $this;
     }
 
@@ -55,6 +56,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         foreach ($this->columnSizes as $breakpoint => $sizes) {
             $controlSizes[$breakpoint] = $sizes[1];
         }
+
         return $controlSizes;
     }
 
@@ -64,18 +66,21 @@ class HorizontalFormBuilder extends BasicFormBuilder
         foreach ($this->columnSizes as $breakpoint => $sizes) {
             $class .= sprintf('col-%s-%s ', $breakpoint, $sizes[0]);
         }
+
         return trim($class);
     }
 
-    public function button($value, $name = null, $type = "btn-default")
+    public function button($value, $name = null, $type = 'btn-default')
     {
         $button = $this->builder->button($value, $name)->addClass('btn')->addClass($type);
+
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 
-    public function submit($value = "Submit", $type = "btn-default")
+    public function submit($value = 'Submit', $type = 'btn-default')
     {
         $button = $this->builder->submit($value)->addClass('btn')->addClass($type);
+
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 

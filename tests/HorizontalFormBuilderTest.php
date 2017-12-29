@@ -3,8 +3,8 @@
 namespace Srmklive\BootForms\Test;
 
 use Mockery;
-use Srmklive\BootForms\HorizontalFormBuilder;
 use Srmklive\BootForms\Form\FormBuilder;
+use Srmklive\BootForms\HorizontalFormBuilder;
 
 class HorizontalFormBuilderTest extends \PHPUnit\Framework\TestCase
 {
@@ -13,7 +13,7 @@ class HorizontalFormBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function setUp()
     {
-        $this->builder = new FormBuilder;
+        $this->builder = new FormBuilder();
         $this->form = new HorizontalFormBuilder($this->builder);
     }
 

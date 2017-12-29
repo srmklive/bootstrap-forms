@@ -38,6 +38,7 @@ class FormGroup extends Element
             return;
         }
         $this->helpBlock = new HelpBlock($text);
+
         return $this;
     }
 
@@ -63,6 +64,7 @@ class FormGroup extends Element
     public function __call($method, $parameters)
     {
         call_user_func_array([$this->control, $method], $parameters);
+
         return $this;
     }
 }

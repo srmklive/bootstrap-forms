@@ -20,7 +20,7 @@ class SelectTest extends TestCase
 
     protected function elementRegExp($attributes)
     {
-        return '/\A<select .*?' . $attributes . '( .*?|)><\/select>\z/';
+        return '/\A<select .*?'.$attributes.'( .*?|)><\/select>\z/';
     }
 
     public function testSelectCanBeCreatedWithOptions()
@@ -180,10 +180,10 @@ class SelectTest extends TestCase
         $options = [
             'Ontario' => [
                 'toronto' => 'Toronto',
-                'london' => 'London',
+                'london'  => 'London',
             ],
             'Quebec' => [
-                'montreal' => 'Montreal',
+                'montreal'    => 'Montreal',
                 'quebec-city' => 'Quebec City',
             ],
         ];
@@ -217,9 +217,9 @@ class SelectTest extends TestCase
     {
         $options = [
             'toronto' => 'Toronto',
-            'london' => 'London',
-            'Quebec' => [
-                'montreal' => 'Montreal',
+            'london'  => 'London',
+            'Quebec'  => [
+                'montreal'    => 'Montreal',
                 'quebec-city' => 'Quebec City',
             ],
         ];

@@ -10,7 +10,7 @@ class FormBuilderTest extends TestCase
 {
     public function setUp()
     {
-        $this->form = new FormBuilder;
+        $this->form = new FormBuilder();
     }
 
     public function tearDown()
@@ -20,7 +20,7 @@ class FormBuilderTest extends TestCase
 
     public function testFormBuilderCanBeCreated()
     {
-        $formBuilder = new FormBuilder;
+        $formBuilder = new FormBuilder();
 
         $this->assertInstanceOf(FormBuilder::class, $formBuilder);
     }

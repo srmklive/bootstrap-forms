@@ -10,7 +10,7 @@ class BindingTest extends TestCase
 {
     public function setUp()
     {
-        $this->form = new FormBuilder;
+        $this->form = new FormBuilder();
     }
 
     public function tearDown()
@@ -88,7 +88,7 @@ class BindingTest extends TestCase
         $object = $this->getStubObject();
         $this->form->bind($object);
 
-        $expected  = '<select name="favourite_foods[]" multiple="multiple">';
+        $expected = '<select name="favourite_foods[]" multiple="multiple">';
         $expected .= '<option value="fish" selected>Fish</option>';
         $expected .= '<option value="tofu">Tofu</option>';
         $expected .= '<option value="chips" selected>Chips</option>';
@@ -147,7 +147,7 @@ class BindingTest extends TestCase
 
     public function testBindMagicProperty()
     {
-        $object = new MagicGetter;
+        $object = new MagicGetter();
         $this->form->bind($object);
 
         $expected = '<input type="text" name="not_magic" value="foo">';
@@ -186,8 +186,8 @@ class BindingTest extends TestCase
                 'city' => 'Roswell',
                 'tree' => [
                     'has' => [
-                        'nested' => 'Bird'
-                    ]
+                        'nested' => 'Bird',
+                    ],
                 ],
             ],
         ];
@@ -207,7 +207,7 @@ class BindingTest extends TestCase
         $array = [
             'address' => [
                 'tree' => [
-                    'nested' => 'Bird'
+                    'nested' => 'Bird',
                 ],
             ],
         ];
@@ -246,8 +246,8 @@ class BindingTest extends TestCase
                 'city' => 'Roswell',
                 'tree' => [
                     'has' => [
-                        'nested' => 'Bird'
-                    ]
+                        'nested' => 'Bird',
+                    ],
                 ],
             ],
         ]));
@@ -269,8 +269,8 @@ class BindingTest extends TestCase
                 'city' => 'Roswell',
                 'tree' => json_decode(json_encode([
                     'has' => [
-                        'nested' => 'Bird'
-                    ]
+                        'nested' => 'Bird',
+                    ],
                 ])),
             ],
         ];
@@ -322,8 +322,8 @@ class BindingTest extends TestCase
         $object = (object) ['published' => 1];
         $this->form->bind($object);
 
-        $expected  = '<input type="checkbox" name="published[]" value="1" checked="checked">';
-        $result  = (string) $this->form->checkbox('published[]', 1);
+        $expected = '<input type="checkbox" name="published[]" value="1" checked="checked">';
+        $result = (string) $this->form->checkbox('published[]', 1);
         $this->assertEquals($expected, $result);
 
         $object = (object) ['published' => 0];
@@ -353,9 +353,9 @@ class BindingTest extends TestCase
         $object = $this->getStubObject();
         $this->form->bind($object);
 
-        $expected  = '<input type="checkbox" name="published[]" value="1" checked="checked">';
+        $expected = '<input type="checkbox" name="published[]" value="1" checked="checked">';
         $expected .= '<input type="checkbox" name="published[]" value="0">';
-        $result  = (string) $this->form->checkbox('published[]', 1)->defaultToUnchecked();
+        $result = (string) $this->form->checkbox('published[]', 1)->defaultToUnchecked();
         $result .= (string) $this->form->checkbox('published[]', 0);
         $this->assertEquals($expected, $result);
     }
@@ -365,9 +365,9 @@ class BindingTest extends TestCase
         $object = $this->getStubObject();
         $this->form->bind($object);
 
-        $expected  = '<input type="radio" name="published[]" value="1" checked="checked">';
+        $expected = '<input type="radio" name="published[]" value="1" checked="checked">';
         $expected .= '<input type="radio" name="published[]" value="0">';
-        $result  = (string) $this->form->radio('published[]', 1);
+        $result = (string) $this->form->radio('published[]', 1);
         $result .= (string) $this->form->radio('published[]', 0)->defaultToChecked();
         $this->assertEquals($expected, $result);
     }
@@ -377,9 +377,9 @@ class BindingTest extends TestCase
         $object = $this->getStubObject();
         $this->form->bind($object);
 
-        $expected  = '<input type="radio" name="published[]" value="1" checked="checked">';
+        $expected = '<input type="radio" name="published[]" value="1" checked="checked">';
         $expected .= '<input type="radio" name="published[]" value="0">';
-        $result  = (string) $this->form->radio('published[]', 1)->defaultToUnchecked();
+        $result = (string) $this->form->radio('published[]', 1)->defaultToUnchecked();
         $result .= (string) $this->form->radio('published[]', 0);
         $this->assertEquals($expected, $result);
     }
@@ -441,7 +441,7 @@ class BindingTest extends TestCase
 
     private function getStubObject()
     {
-        $obj = new \stdClass;
+        $obj = new \stdClass();
 
         $obj->email = 'johndoe@example.com';
         $obj->first_name = 'John';

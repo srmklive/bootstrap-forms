@@ -9,7 +9,7 @@ class FormGroupTest extends \PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
-        $this->builder = new FormBuilder;
+        $this->builder = new FormBuilder();
     }
 
     public function testCanRenderBasicFormGroup()
