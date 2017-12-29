@@ -1,10 +1,9 @@
 <?php
 
-use AdamWathan\BootForms\Elements\FormGroup;
-use AdamWathan\BootForms\Elements\HelpBlock;
+use Srmklive\BootForms\Elements\FormGroup;
 use AdamWathan\Form\FormBuilder;
 
-class FormGroupTest extends PHPUnit_Framework_TestCase
+class FormGroupTest extends \PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

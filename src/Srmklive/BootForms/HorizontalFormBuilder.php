@@ -1,9 +1,10 @@
-<?php namespace AdamWathan\BootForms;
+<?php
 
-use AdamWathan\BootForms\Elements\CheckGroup;
-use AdamWathan\BootForms\Elements\HelpBlock;
-use AdamWathan\BootForms\Elements\HorizontalFormGroup;
-use AdamWathan\BootForms\Elements\OffsetFormGroup;
+namespace Srmklive\BootForms;
+
+use Srmklive\BootForms\Elements\CheckGroup;
+use Srmklive\BootForms\Elements\HorizontalFormGroup;
+use Srmklive\BootForms\Elements\OffsetFormGroup;
 use AdamWathan\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder

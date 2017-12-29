@@ -1,10 +1,12 @@
-<?php namespace AdamWathan\BootForms;
+<?php
 
-use AdamWathan\BootForms\Elements\CheckGroup;
-use AdamWathan\BootForms\Elements\FormGroup;
-use AdamWathan\BootForms\Elements\GroupWrapper;
-use AdamWathan\BootForms\Elements\HelpBlock;
-use AdamWathan\BootForms\Elements\InputGroup;
+namespace Srmklive\BootForms;
+
+use Srmklive\BootForms\Elements\CheckGroup;
+use Srmklive\BootForms\Elements\FormGroup;
+use Srmklive\BootForms\Elements\GroupWrapper;
+use Srmklive\BootForms\Elements\HelpBlock;
+use Srmklive\BootForms\Elements\InputGroup;
 use AdamWathan\Form\FormBuilder;
 
 class BasicFormBuilder

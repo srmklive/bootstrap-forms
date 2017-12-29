@@ -1,4 +1,6 @@
-<?php namespace AdamWathan\BootForms\Elements;
+<?php
+
+namespace Srmklive\BootForms\Elements;
 
 class OffsetFormGroup
 {

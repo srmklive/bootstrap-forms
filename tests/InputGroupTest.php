@@ -1,8 +1,8 @@
 <?php
 
-use AdamWathan\BootForms\Elements\InputGroup;
+use Srmklive\BootForms\Elements\InputGroup;
 
-class InputGroupTest extends PHPUnit_Framework_TestCase
+class InputGroupTest extends \PHPUnit\Framework\TestCase
 {
     public function testCanRenderBasicText()
     {

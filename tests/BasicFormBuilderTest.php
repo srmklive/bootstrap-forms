@@ -1,9 +1,9 @@
 <?php
 
-use AdamWathan\BootForms\BasicFormBuilder;
+use Srmklive\BootForms\BasicFormBuilder;
 use AdamWathan\Form\FormBuilder;
 
-class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
+class BasicFormBuilderTest extends \PHPUnit\Framework\TestCase
 {
     private $form;
     private $builder;

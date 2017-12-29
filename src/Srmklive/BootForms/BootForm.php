@@ -1,4 +1,6 @@
-<?php namespace AdamWathan\BootForms;
+<?php
+
+namespace Srmklive\BootForms;
 
 class BootForm
 {

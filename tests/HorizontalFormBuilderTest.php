@@ -1,9 +1,9 @@
 <?php
 
-use AdamWathan\BootForms\HorizontalFormBuilder;
+use Srmklive\BootForms\HorizontalFormBuilder;
 use AdamWathan\Form\FormBuilder;
 
-class HorizontalFormBuilderTest extends PHPUnit_Framework_TestCase
+class HorizontalFormBuilderTest extends \PHPUnit\Framework\TestCase
 {
     private $form;
     private $builder;
