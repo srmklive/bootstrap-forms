@@ -29,10 +29,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Srmklive\BootForms\BootFormsServiceProvider"
+                "Srmklive\\BootForms\\BootFormsServiceProvider"
             ],
             "aliases": {
-                "BootForm" => "Srmklive\BootForms\Facades\BootForm"
+                "BootForm": "Srmklive\\BootForms\\Facades\\BootForm"
             }    
         }        
     },
