@@ -26,5 +26,15 @@
             "Srmklive\\BootForms\\Test\\": "tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Srmklive\BootForms\BootFormsServiceProvider"
+            ],
+            "aliases": {
+                "BootForm" => "Srmklive\BootForms\Facades\BootForm"
+            }    
+        }        
+    },
     "minimum-stability": "stable"
 }
